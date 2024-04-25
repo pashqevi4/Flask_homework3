@@ -37,10 +37,6 @@ def fill_db():
 def add_user():
     form = LoginForm()
     if request.method == 'POST':
-        # name = form.name.data
-        # surname = form.surname.data
-        # email = form.email.data
-        # password = form.password.data
         new_user = User(name=form.name.data, surname=form.surname.data, email=form.email.data, password=hash(form.password.data))
         db.session.add(new_user)
         db.session.commit()
